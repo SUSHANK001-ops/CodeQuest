@@ -122,8 +122,8 @@ class HTMLBasicsPlanet {
       .addEventListener("click", () => this.resetCode());
 
     // Update step indicators
-    document.querySelectorAll('.step').forEach(step => {
-      step.addEventListener('click', (e) => {
+    document.querySelectorAll(".step").forEach((step) => {
+      step.addEventListener("click", (e) => {
         const stepIndex = parseInt(e.target.dataset.step);
         this.loadExercise(stepIndex);
       });
@@ -138,27 +138,28 @@ class HTMLBasicsPlanet {
   loadExercise(stepIndex = this.currentStep) {
     this.currentStep = stepIndex;
     const exercise = this.exercises[stepIndex];
-    
+
     // Update exercise title and instruction
     document.getElementById("exercise-title").textContent = exercise.title;
-    document.getElementById("exercise-instruction").textContent = exercise.instruction;
+    document.getElementById("exercise-instruction").textContent =
+      exercise.instruction;
     document.getElementById("exercise-hint").textContent = exercise.hint;
-    
+
     // Update code input
     document.getElementById("code-input").value = exercise.starterCode;
-    
+
     // Update step indicators
-    document.querySelectorAll('.step').forEach((step, index) => {
-      step.classList.toggle('active', index === stepIndex);
-      step.classList.toggle('completed', index < stepIndex);
+    document.querySelectorAll(".step").forEach((step, index) => {
+      step.classList.toggle("active", index === stepIndex);
+      step.classList.toggle("completed", index < stepIndex);
     });
-    
+
     // Hide hint initially
-    document.querySelector('.hint-section').style.display = 'none';
-    
+    document.querySelector(".hint-section").style.display = "none";
+
     // Clear feedback
-    document.getElementById("feedback-area").innerHTML = '';
-    
+    document.getElementById("feedback-area").innerHTML = "";
+
     // Update preview
     this.updatePreview();
   }
@@ -166,36 +167,37 @@ class HTMLBasicsPlanet {
   updatePreview() {
     const code = document.getElementById("code-input").value;
     const iframe = document.getElementById("preview-iframe");
-    
-    const blob = new Blob([code], { type: 'text/html' });
+
+    const blob = new Blob([code], { type: "text/html" });
     const url = URL.createObjectURL(blob);
     iframe.src = url;
   }
 
   showHint() {
-    const hintSection = document.querySelector('.hint-section');
-    hintSection.style.display = hintSection.style.display === 'none' ? 'block' : 'none';
+    const hintSection = document.querySelector(".hint-section");
+    hintSection.style.display =
+      hintSection.style.display === "none" ? "block" : "none";
   }
 
   resetCode() {
     const exercise = this.exercises[this.currentStep];
     document.getElementById("code-input").value = exercise.starterCode;
     this.updatePreview();
-    document.getElementById("feedback-area").innerHTML = '';
+    document.getElementById("feedback-area").innerHTML = "";
   }
 
   submitCode() {
     const userCode = document.getElementById("code-input").value.trim();
     const exercise = this.exercises[this.currentStep];
-    
+
     if (!userCode) {
       this.showFeedback("Please enter some HTML code first!", "error");
       return;
     }
-    
+
     // Simple validation - check if solution elements are present
     const isValid = this.validateCode(userCode, exercise.solution);
-    
+
     if (isValid) {
       this.showFeedback("🎉 Excellent work! Your HTML looks great!", "success");
       if (this.currentStep < this.exercises.length - 1) {
@@ -204,21 +206,27 @@ class HTMLBasicsPlanet {
         }, 2000);
       } else {
         setTimeout(() => {
-          this.showFeedback("🚀 Congratulations! You've completed HTML Basics!", "success");
+          this.showFeedback(
+            "🚀 Congratulations! You've completed HTML Basics!",
+            "success"
+          );
         }, 2000);
       }
     } else {
-      this.showFeedback("Not quite right. Check the hint for guidance!", "error");
+      this.showFeedback(
+        "Not quite right. Check the hint for guidance!",
+        "error"
+      );
     }
   }
 
   validateCode(userCode, solution) {
     // Simple validation - check for basic HTML structure
-    const hasDoctype = userCode.toLowerCase().includes('<!doctype html>');
-    const hasHtml = userCode.toLowerCase().includes('<html');
-    const hasHead = userCode.toLowerCase().includes('<head');
-    const hasBody = userCode.toLowerCase().includes('<body');
-    
+    const hasDoctype = userCode.toLowerCase().includes("<!doctype html>");
+    const hasHtml = userCode.toLowerCase().includes("<html");
+    const hasHead = userCode.toLowerCase().includes("<head");
+    const hasBody = userCode.toLowerCase().includes("<body");
+
     return hasDoctype && hasHtml && hasHead && hasBody;
   }
 
@@ -226,7 +234,13 @@ class HTMLBasicsPlanet {
     const feedbackArea = document.getElementById("feedback-area");
     feedbackArea.innerHTML = `
       <div class="feedback ${type}">
-        <h4>${type === 'success' ? '✅ Success!' : type === 'error' ? '❌ Try Again' : '💡 Hint'}</h4>
+        <h4>${
+          type === "success"
+            ? "✅ Success!"
+            : type === "error"
+            ? "❌ Try Again"
+            : "💡 Hint"
+        }</h4>
         <p>${message}</p>
       </div>
     `;

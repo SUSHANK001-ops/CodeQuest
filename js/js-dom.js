@@ -18,7 +18,9 @@ class JSDOMPlanet {
     if (editorContainer) {
       editorContainer.innerHTML = `
         <div class="exercise-header">
-          <h2 id="exercise-title">Exercise ${this.currentStep} of ${this.totalSteps}</h2>
+          <h2 id="exercise-title">Exercise ${this.currentStep} of ${
+        this.totalSteps
+      }</h2>
           <div class="step-indicator">
             ${Array.from(
               { length: this.totalSteps },
@@ -81,23 +83,22 @@ class JSDOMPlanet {
     document
       .getElementById("submit-btn")
       .addEventListener("click", () => this.submitCode());
-      
+
     // Hint button
-    document
-      .getElementById("hint-btn")
-      .addEventListener("click", () => {
-        const hintSection = document.querySelector('.hint-section');
-        hintSection.style.display = hintSection.style.display === 'none' ? 'block' : 'none';
-      });
-      
+    document.getElementById("hint-btn").addEventListener("click", () => {
+      const hintSection = document.querySelector(".hint-section");
+      hintSection.style.display =
+        hintSection.style.display === "none" ? "block" : "none";
+    });
+
     // Reset button
     document
       .getElementById("reset-btn")
       .addEventListener("click", () => this.resetCode());
 
     // Step indicators
-    document.querySelectorAll('.step').forEach(step => {
-      step.addEventListener('click', (e) => {
+    document.querySelectorAll(".step").forEach((step) => {
+      step.addEventListener("click", (e) => {
         const stepIndex = parseInt(e.target.dataset.step);
         this.currentStep = stepIndex + 1;
         this.loadExercise();
@@ -131,7 +132,8 @@ class JSDOMPlanet {
 
     // Update hint content
     if (currentExercise.hints && currentExercise.hints.length > 0) {
-      document.getElementById("exercise-hint").textContent = currentExercise.hints[0];
+      document.getElementById("exercise-hint").textContent =
+        currentExercise.hints[0];
     }
 
     this.updateStepIndicator();
