@@ -34,30 +34,111 @@
     </header>
 
     <main class="container split" id="main" tabindex="-1">
-      <section aria-labelledby="lesson-title">
-        <h1 id="lesson-title">JavaScript Variables</h1>
-        <p>
-          Use <code>const</code> and <code>let</code> for predictable,
-          block-scoped variables.
-        </p>
+      <section
+        aria-labelledby="lesson-title"
+        class="lesson-content animate-fade-up"
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+          "
+        >
+          <div style="font-size: 3rem">📦</div>
+          <div>
+            <h1
+              id="lesson-title"
+              style="
+                background: var(--gradient-primary);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                margin: 0;
+              "
+            >
+              JavaScript Variables
+            </h1>
+            <p style="color: var(--muted); margin: 0.5rem 0 0">
+              Use const and let for predictable, block-scoped variables
+            </p>
+          </div>
+        </div>
+
+        <div class="interactive-demo">
+          <p>
+            🚀 <strong>Welcome to Planet Variables!</strong> Learn to store and 
+            manage data in JavaScript. Master the difference between const, let, 
+            and understand variable scope and data types.
+          </p>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 25%"></div>
+        </div>
+
+        <h3 style="color: var(--dark-green); margin: 2rem 0 1rem">
+          🎯 Learning Objectives
+        </h3>
+        <ul style="list-style: none; padding: 0">
+          <li
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.75rem;
+              padding: 0.5rem 0;
+              border-bottom: 1px solid var(--light-green);
+            "
+          >
+            <span style="color: var(--success); font-size: 1.2rem">✅</span>
+            Use const for constants and let for variables
+          </li>
+          <li
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.75rem;
+              padding: 0.5rem 0;
+              border-bottom: 1px solid var(--light-green);
+            "
+          >
+            <span style="color: var(--success); font-size: 1.2rem">✅</span>
+            Understand block scope and variable hoisting
+          </li>
+          <li
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.75rem;
+              padding: 0.5rem 0;
+              border-bottom: 1px solid var(--light-green);
+            "
+          >
+            <span style="color: var(--success); font-size: 1.2rem">✅</span>
+            Work with different data types (strings, numbers, booleans)
+          </li>
+          <li
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.75rem;
+              padding: 0.5rem 0;
+              border-bottom: 1px solid var(--light-green);
+            "
+          >
+            <span style="color: var(--success); font-size: 1.2rem">✅</span>
+            Manipulate arrays and objects effectively
+          </li>
+        </ul>
       </section>
 
-      <section class="editor-wrap" aria-label="Editor">
-        <div class="editor-toolbar">
-          <button id="runBtn" class="btn btn-primary">Run</button>
-          <button id="resetBtn" class="btn">Reset</button>
-          <button id="fullBtn" class="btn">Fullscreen</button>
-        </div>
-        <div
-          id="editor"
-          class="editor-area"
-          role="region"
-          aria-label="Code editor"
-        ></div>
-        <div class="preview" aria-label="Live preview">
-          <iframe id="preview" title="Live preview"></iframe>
+      <section class="editor-wrap" aria-label="Interactive JavaScript Variable Exercises">
+        <div class="editor-area">
+          <div id="coding-exercises"></div>
         </div>
       </section>
+    </main>
     </main>
 
     <footer class="site-footer container">

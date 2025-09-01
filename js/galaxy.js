@@ -16,13 +16,63 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// Smooth scroll for Launch button
+// Enhanced animations and interactions
+function addEnhancedAnimations() {
+  // Add hover effects to feature cards
+  const featureCards = document.querySelectorAll(".feature-card");
+  featureCards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.1}s`;
+    card.classList.add("fade-in-up");
+
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-8px) scale(1.05)";
+      card.style.boxShadow = "0 12px 40px var(--shadow-green)";
+      card.style.borderColor = "var(--nebula-purple)";
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0) scale(1)";
+      card.style.boxShadow = "0 4px 20px var(--shadow-dark)";
+      card.style.borderColor = "var(--light-green)";
+    });
+  });
+
+  // Add scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in-up");
+      }
+    });
+  }, observerOptions);
+
+  // Observe planet cards
+  const planetCards = document.querySelectorAll(".planet-card");
+  planetCards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.1}s`;
+    observer.observe(card);
+  });
+}
+
+// Enhanced smooth scroll for Launch button
 const launchBtn = document.getElementById("launchBtn");
 if (launchBtn) {
   launchBtn.addEventListener("click", (e) => {
     const sel = launchBtn.getAttribute("data-scroll");
     const el = sel ? document.querySelector(sel) : null;
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Add a subtle bounce animation to the target section
+      el.style.animation = "bounce 0.6s ease-out";
+      setTimeout(() => {
+        el.style.animation = "";
+      }, 600);
+    }
     const ambient = document.getElementById("ambient");
     if (ambient && ambient.paused) {
       ambient.muted = true; // keep muted for a11y by default
@@ -93,4 +143,30 @@ function initImgFallbacks() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", initImgFallbacks);
+document.addEventListener("DOMContentLoaded", () => {
+  initImgFallbacks();
+  addEnhancedAnimations();
+});
+
+// Add bounce animation keyframes to CSS if not already present
+const style = document.createElement("style");
+style.textContent = `
+  @keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+      animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+      transform: translate3d(0, -15px, 0);
+    }
+    70% {
+      animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+      transform: translate3d(0, -7px, 0);
+    }
+    90% {
+      transform: translate3d(0,-2px,0);
+    }
+  }
+`;
+document.head.appendChild(style);

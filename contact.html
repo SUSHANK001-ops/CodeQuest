@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" type="image/svg+xml" href="./assets/icons/rocket.svg" />
   </head>
@@ -39,44 +40,183 @@
     </header>
 
     <main id="main" class="container" tabindex="-1">
-      <h1>Contact us</h1>
-      <form
-        id="contactForm"
-        class="card"
-        novalidate
-        aria-describedby="formNote"
-      >
-        <p id="formNote" class="tiny">
-          
+      <div style="text-align: center; margin-bottom: 3rem">
+        <h1
+          style="
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: clamp(2rem, 5vw, 3rem);
+          "
+        >
+          Contact Mission Control 🚀
+        </h1>
+        <p
+          style="
+            font-size: 1.125rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 1rem auto;
+          "
+        >
+          Have questions about your coding journey? Need help navigating the
+          galaxy? Our mission control team is here to help you explore the
+          universe of web development!
         </p>
-        <div class="field">
-          <label for="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            autocomplete="name"
-            required
-          />
+      </div>
+
+      <div style="display: grid; gap: 2rem; max-width: 800px; margin: 0 auto">
+        <form
+          id="contactForm"
+          class="card"
+          novalidate
+          aria-describedby="formNote"
+        >
+          <div style="text-align: center; margin-bottom: 2rem">
+            <h2 style="color: var(--dark-green); margin-bottom: 0.5rem">
+              Send us a message
+            </h2>
+            <p id="formNote" class="tiny" style="color: var(--muted)">
+              We'll respond faster than light speed! ⚡
+            </p>
+          </div>
+
+          <div class="field">
+            <label for="name" style="font-weight: 600; color: var(--dark-green)"
+              >👨‍🚀 Name</label
+            >
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Enter your space name"
+              required
+            />
+          </div>
+          <div class="field">
+            <label
+              for="email"
+              style="font-weight: 600; color: var(--dark-green)"
+              >📧 Email</label
+            >
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="your.email@galaxy.com"
+              required
+            />
+          </div>
+          <div class="field">
+            <label
+              for="subject"
+              style="font-weight: 600; color: var(--dark-green)"
+              >🎯 Subject</label
+            >
+            <select
+              id="subject"
+              name="subject"
+              style="
+                background: #ffffff;
+                border: 2px solid var(--light-green);
+                color: var(--text);
+                border-radius: 0.75rem;
+                padding: 1rem;
+                transition: all 200ms ease;
+                font-family: inherit;
+                width: 100%;
+              "
+            >
+              <option value="">Select a topic...</option>
+              <option value="general">General Question</option>
+              <option value="bug">Bug Report</option>
+              <option value="feature">Feature Request</option>
+              <option value="help">Need Help</option>
+              <option value="feedback">Feedback</option>
+            </select>
+          </div>
+          <div class="field">
+            <label
+              for="message"
+              style="font-weight: 600; color: var(--dark-green)"
+              >💬 Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Tell us about your coding adventure or any questions you have..."
+              required
+            ></textarea>
+          </div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            style="width: 100%; justify-content: center; font-size: 1.1rem"
+          >
+            🚀 Send Message to Mission Control
+          </button>
+        </form>
+
+        <!-- Contact Info Cards -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+          "
+        >
+          <div class="card" style="text-align: center">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem">💌</div>
+            <h3 style="color: var(--dark-green); margin-bottom: 1rem">
+              Email Us
+            </h3>
+            <p style="color: var(--muted)">
+              <a
+                href="mailto:hello@codequest.dev"
+                style="
+                  color: var(--nebula-purple);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+              >
+                hello@codequest.dev
+              </a>
+            </p>
+          </div>
+
+          <div class="card" style="text-align: center">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem">🌍</div>
+            <h3 style="color: var(--dark-green); margin-bottom: 1rem">
+              Global Community
+            </h3>
+            <p style="color: var(--muted)">
+              Join developers from around the world learning web development
+            </p>
+          </div>
+
+          <div class="card" style="text-align: center">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem">⚡</div>
+            <h3 style="color: var(--dark-green); margin-bottom: 1rem">
+              Quick Response
+            </h3>
+            <p style="color: var(--muted)">
+              We typically respond within 24 hours
+            </p>
+          </div>
         </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            required
-          />
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Send Message</button>
-      </form>
+      </div>
+
       <div id="toast" role="status" aria-live="polite" class="toast" hidden>
-        Message sent locally. We'll get back to you in light-years 😉
+        <strong>🎉 Message Sent!</strong>
+        <span
+          >Thanks for reaching out! We'll get back to you in light-years
+          😉</span
+        >
       </div>
     </main>
 

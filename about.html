@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" type="image/svg+xml" href="./assets/icons/rocket.svg" />
   </head>
@@ -39,15 +40,73 @@
     </header>
 
     <main id="main" class="container" tabindex="-1">
-      <h1>Our Mission</h1>
-      <p>
-        CodeQuest is a micro-galaxy for learning the building blocks of the web:
-        HTML, CSS, and JavaScript. We believe learning should be playful,
-        accessible, and offline-ready.
-      </p>
+      <div style="text-align: center; margin-bottom: 4rem">
+        <h1
+          style="
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+          "
+        >
+          🚀 Our Mission
+        </h1>
+        <div
+          style="
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+            line-height: 1.8;
+          "
+        >
+          <p style="color: var(--muted); margin-bottom: 2rem">
+            CodeQuest is a micro-galaxy for learning the building blocks of the
+            web: HTML, CSS, and JavaScript. We believe learning should be
+            playful, accessible, and offline-ready.
+          </p>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              gap: 2rem;
+              margin: 3rem 0;
+            "
+          >
+            <div style="text-align: center">
+              <div style="font-size: 3rem; margin-bottom: 1rem">🎯</div>
+              <h3 style="color: var(--dark-green); margin-bottom: 0.5rem">
+                Mission-Driven
+              </h3>
+              <p style="color: var(--muted); font-size: 0.95rem">
+                Empowering developers through interactive learning
+              </p>
+            </div>
+            <div style="text-align: center">
+              <div style="font-size: 3rem; margin-bottom: 1rem">🌍</div>
+              <h3 style="color: var(--dark-green); margin-bottom: 0.5rem">
+                Accessible
+              </h3>
+              <p style="color: var(--muted); font-size: 0.95rem">
+                Works offline and on any device
+              </p>
+            </div>
+            <div style="text-align: center">
+              <div style="font-size: 3rem; margin-bottom: 1rem">⚡</div>
+              <h3 style="color: var(--dark-green); margin-bottom: 0.5rem">
+                Interactive
+              </h3>
+              <p style="color: var(--muted); font-size: 0.95rem">
+                Learn by doing, not just reading
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section aria-labelledby="team">
-        <h2 id="team">The Crew</h2>
+        <h2 id="team" class="section-title">👨‍🚀 Meet the Crew</h2>
         <ul class="team-grid" role="list">
           <li role="listitem" class="team-card">
             <img

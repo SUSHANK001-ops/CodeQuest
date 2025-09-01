@@ -1,31 +1,662 @@
-/* planets.css — lesson/playground layout refinements */
+/* planets.css — Simple flexbox layout for all planets */
 
-.editor-wrap {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+/* Main coding exercises container */
+#coding-exercises {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 0;
 }
-.editor-toolbar {
-  position: sticky;
-  top: 0;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(6px);
-}
+
+/* Simple flexbox layout - everything in column */
+.coding-area,
+.coding-exercise,
 .editor-area {
-  display: grid;
-  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
 }
-@media (min-width: 960px) {
-  .editor-area {
-    grid-template-columns: 1fr;
+
+/* All components stack vertically with consistent spacing */
+.code-editor,
+.code-editor-container,
+.preview-area,
+.live-preview,
+.html-preview,
+.console-output,
+.feedback-area,
+.exercise-instructions,
+.instruction-panel {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Exercise header styling */
+.exercise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--gradient-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px solid var(--light-green);
+  margin-bottom: 1.5rem;
+}
+
+.exercise-header h2 {
+  font-size: 1.75rem;
+  margin: 0;
+  color: var(--dark-green);
+}
+
+/* Step indicators */
+.step-indicator {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5e7eb;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+
+.step.active {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 4px 12px var(--shadow-green);
+}
+
+.step.completed {
+  background: var(--dark-green);
+  color: white;
+}
+
+/* Content areas */
+.exercise-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Instruction panel */
+.instruction-panel {
+  background: var(--surface);
+  border: 2px solid var(--light-green);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px var(--shadow-dark);
+  margin-bottom: 1.5rem;
+}
+
+.instruction-panel h3 {
+  margin: 0 0 1rem 0;
+  color: var(--dark-green);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.instruction-panel p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Hint section */
+.hint-section {
+  background: var(--light-green);
+  border-left: 4px solid var(--nebula-purple);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.hint-section h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--dark-green);
+}
+
+/* Code editor styling */
+.code-editor,
+.code-editor-container {
+  background: var(--surface);
+  border: 2px solid var(--light-green);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow-dark);
+  margin-bottom: 1.5rem;
+}
+
+.code-editor h4,
+.editor-header {
+  background: var(--gradient-secondary);
+  margin: 0;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--light-green);
+  color: var(--dark-green);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.code-editor textarea {
+  width: 100%;
+  min-height: 400px;
+  border: none;
+  outline: none;
+  padding: 2rem;
+  font-family: "Courier New", Consolas, Monaco, monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  resize: vertical;
+  background: #f8f9fa;
+  color: #2d3748;
+}
+
+.code-editor textarea:focus {
+  background: #ffffff;
+}
+
+.editor-controls {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  background: var(--gradient-secondary);
+  border-top: 1px solid var(--light-green);
+}
+
+.preview-area {
+  background: var(--surface);
+  border: 2px solid var(--light-green);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow-dark);
+  margin-bottom: 1.5rem;
+}
+
+.preview-area h4 {
+  background: var(--gradient-secondary);
+  margin: 0;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--light-green);
+  color: var(--dark-green);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.preview-frame {
+  padding: 2rem;
+  min-height: 400px;
+  background: white;
+}
+
+.preview-frame iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: none;
+  display: block;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-area {
+  background: var(--surface);
+  border: 2px solid var(--light-green);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px var(--shadow-dark);
+  min-height: 60px;
+}
+
+.feedback {
+  padding: 1.5rem;
+}
+
+.feedback.success {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  border: 2px solid #10b981;
+  color: #065f46;
+}
+
+.feedback.error {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  border: 2px solid #ef4444;
+  color: #991b1b;
+}
+
+.feedback h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.125rem;
+}
+
+.feedback ul {
+  margin: 0.75rem 0;
+  padding-left: 1.25rem;
+}
+
+.feedback li {
+  margin: 0.25rem 0;
+  line-height: 1.5;
+}
+
+.exercise-instructions {
+  background: var(--surface);
+  border: 2px solid var(--light-green);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px var(--shadow-dark);
+}
+
+.instruction-card h4 {
+  color: var(--dark-green);
+  margin: 0 0 1rem 0;
+  font-size: 1.125rem;
+}
+
+.instruction-card ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.instruction-card li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.tip {
+  background: var(--light-green);
+  border-left: 4px solid var(--nebula-purple);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+}
+
+.html-preview,
+.console-output {
+  background: var(--surface);
+  border: 2px solid var(--light-green);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 20px var(--shadow-dark);
+  margin-bottom: 1.5rem;
+}
+
+.html-preview h4,
+.console-output h4 {
+  margin: 0 0 1rem 0;
+  color: var(--dark-green);
+}
+
+.preview-code {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.preview-code pre {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.code-editor-container {
+  background: var(--surface);
+  border: 2px solid var(--light-green);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow-dark);
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--gradient-secondary);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--light-green);
+  font-weight: 600;
+  color: var(--dark-green);
+}
+
+.code-editor-old {
+  width: 100%;
+  min-height: 200px;
+  border: none;
+  outline: none;
+  padding: 1.5rem;
+  font-family: "Courier New", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+  background: #f8f9fa;
+  color: #2d3748;
+}
+
+.code-editor-old:focus {
+  background: #ffffff;
+}
+
+.exercise-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-small {
+  background: var(--surface);
+  border: 1px solid var(--light-green);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+  font-size: 0.875rem;
+}
+
+.btn-small:hover {
+  border-color: var(--nebula-purple);
+  background: var(--light-green);
+}
+
+/* Button Styles for Interactive Exercises */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid var(--light-green);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--nebula-purple);
+  box-shadow: 0 8px 20px var(--shadow-green);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: var(--nebula-purple);
+  box-shadow: 0 4px 12px var(--shadow-green);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 20px var(--shadow-green);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--light-green);
+  color: var(--dark-green);
+  border-color: var(--nebula-purple);
+}
+
+.btn-secondary:hover {
+  background: var(--nebula-purple);
+  color: white;
+}
+
+/* Ensure all code editors and preview areas have consistent vertical spacing */
+.code-editor,
+.code-editor-container,
+.preview-area,
+.live-preview,
+.html-preview,
+.console-output {
+  width: 100% !important;
+  margin: 1rem 0;
+  order: unset !important;
+  flex: none !important;
+}
+
+/* Make sure code always comes before preview */
+.code-editor,
+.code-editor-container {
+  order: 1;
+}
+
+.preview-area,
+.live-preview {
+  order: 2;
+}
+
+.html-preview {
+  order: 0; /* HTML preview shows first when present */
+}
+
+.console-output {
+  order: 3; /* Console shows last */
+}
+
+.feedback-area {
+  order: 4; /* Feedback shows at the end */
+}
+
+/* Mobile Button Adjustments */
+@media (max-width: 767px) {
+  .editor-controls {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+    width: 100%;
   }
 }
-.preview iframe {
-  height: 420px;
+@media (max-width: 767px) {
+  .editor-controls {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+}
+
+.feedback-area-old {
+  background: var(--surface);
+  border: 2px solid var(--light-green);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 20px var(--shadow-dark);
+}
+
+.feedback-success-old {
+  background: #d1fae5;
+  border: 2px solid #10b981;
+  color: #065f46;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.feedback-error-old {
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+  color: #991b1b;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.feedback-hint {
+  background: #fef3c7;
+  border: 2px solid #f59e0b;
+  color: #92400e;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+/* Additional feedback styles for JavaScript interactions */
+.feedback-success {
+  background: #d1fae5;
+  border: 2px solid #10b981;
+  color: #065f46;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.feedback-error {
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+  color: #991b1b;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.feedback-hint {
+  background: #fef3c7;
+  border: 2px solid #f59e0b;
+  color: #92400e;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+/* Console output styling */
+.console-content {
+  background: #1a1a1a;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  font-size: 0.875rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  min-height: 120px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.console-entry {
+  margin: 0.25rem 0;
+  line-height: 1.4;
+}
+
+.console-log {
+  color: #00ff00;
+}
+
+.console-error {
+  color: #ff6b6b;
+}
+
+.live-preview {
+  background: var(--surface);
+  border: 2px solid var(--light-green);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 20px var(--shadow-dark);
+}
+
+.live-preview h4 {
+  margin: 0 0 1rem 0;
+  color: var(--dark-green);
 }
 
 /* small helpers */
 code {
-  background: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.25rem;
-  padding: 0.1rem 0.3rem;
+  background: var(--light-green);
+  border: 1px solid var(--nebula-purple);
+  border-radius: 0.375rem;
+  padding: 0.2rem 0.4rem;
+  color: var(--dark-green);
+  font-weight: 600;
+}
+
+/* Enhanced lesson content */
+.lesson-content {
+  background: var(--surface);
+  border: 2px solid var(--light-green);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 8px 30px var(--shadow-dark);
+  transition: all 300ms ease;
+}
+.lesson-content:hover {
+  border-color: var(--nebula-purple);
+  box-shadow: 0 12px 40px var(--shadow-green);
+}
+
+/* Progress indicators */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--light-green);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  width: 0%;
+  transition: width 500ms ease;
+  border-radius: 4px;
+}
+
+/* Interactive elements */
+.interactive-demo {
+  background: var(--gradient-secondary);
+  border: 2px solid var(--nebula-purple);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  position: relative;
+}
+.interactive-demo::before {
+  content: "🚀 Interactive";
+  position: absolute;
+  top: -12px;
+  left: 1rem;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
 }

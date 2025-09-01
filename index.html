@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" type="image/svg+xml" href="./assets/icons/rocket.svg" />
     <meta
@@ -51,19 +52,65 @@
         "
       ></div>
       <div class="hero-inner container">
-        <h1>Launch your coding journey</h1>
+        <h1 class="animate-float">🚀 Launch your coding journey</h1>
         <p>
           Explore 8 interactive planets to learn HTML, CSS, and JavaScript—right
-          in your browser.
+          in your browser. Join thousands of developers mastering web
+          development!
         </p>
-        <button
-          id="launchBtn"
-          class="btn btn-primary"
-          data-scroll="#planets"
-          aria-describedby="launchHint"
+        <div style="margin: 2rem 0">
+          <button
+            id="launchBtn"
+            class="btn btn-primary"
+            data-scroll="#planets"
+            aria-describedby="launchHint"
+          >
+            🌟 Launch Galaxy
+          </button>
+        </div>
+        <div
+          class="stats-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            text-align: center;
+          "
         >
-          Launch Galaxy
-        </button>
+          <div class="stat-item">
+            <div
+              style="
+                font-size: 1.5rem;
+                font-weight: 800;
+                color: var(--nebula-purple);
+              "
+            >
+              8
+            </div>
+            <div style="font-size: 0.875rem; color: var(--muted)">Planets</div>
+          </div>
+          <div class="stat-item">
+            <div
+              style="
+                font-size: 1.5rem;
+                font-weight: 800;
+                color: var(--aurora-cyan);
+              "
+            >
+              100%
+            </div>
+            <div style="font-size: 0.875rem; color: var(--muted)">Free</div>
+          </div>
+          <div class="stat-item">
+            <div
+              style="font-size: 1.5rem; font-weight: 800; color: var(--success)"
+            >
+              Offline
+            </div>
+            <div style="font-size: 0.875rem; color: var(--muted)">Ready</div>
+          </div>
+        </div>
         <p id="launchHint" class="sr-only">
           Press the button to jump to the planet grid
         </p>
@@ -78,7 +125,83 @@
     </section>
 
     <main id="main" class="container" tabindex="-1">
-      <h2 id="planets" class="section-title">Planets</h2>
+      <!-- Features Section -->
+      <section class="features-section" style="margin: 4rem 0">
+        <h2 class="section-title">Why Choose CodeQuest?</h2>
+        <div
+          class="features-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+          "
+        >
+          <div
+            class="feature-card"
+            style="
+              background: var(--surface);
+              border: 2px solid var(--light-green);
+              border-radius: 1.5rem;
+              padding: 2rem;
+              text-align: center;
+              transition: all 300ms ease;
+              box-shadow: 0 4px 20px var(--shadow-dark);
+            "
+          >
+            <div style="font-size: 3rem; margin-bottom: 1rem">🎯</div>
+            <h3 style="color: var(--dark-green); margin-bottom: 1rem">
+              Interactive Learning
+            </h3>
+            <p style="color: var(--muted)">
+              Hands-on coding exercises with instant feedback and real-time
+              preview.
+            </p>
+          </div>
+          <div
+            class="feature-card"
+            style="
+              background: var(--surface);
+              border: 2px solid var(--light-green);
+              border-radius: 1.5rem;
+              padding: 2rem;
+              text-align: center;
+              transition: all 300ms ease;
+              box-shadow: 0 4px 20px var(--shadow-dark);
+            "
+          >
+            <div style="font-size: 3rem; margin-bottom: 1rem">📱</div>
+            <h3 style="color: var(--dark-green); margin-bottom: 1rem">
+              Responsive Design
+            </h3>
+            <p style="color: var(--muted)">
+              Learn to create websites that work perfectly on all devices.
+            </p>
+          </div>
+          <div
+            class="feature-card"
+            style="
+              background: var(--surface);
+              border: 2px solid var(--light-green);
+              border-radius: 1.5rem;
+              padding: 2rem;
+              text-align: center;
+              transition: all 300ms ease;
+              box-shadow: 0 4px 20px var(--shadow-dark);
+            "
+          >
+            <div style="font-size: 3rem; margin-bottom: 1rem">⚡</div>
+            <h3 style="color: var(--dark-green); margin-bottom: 1rem">
+              Fast & Offline
+            </h3>
+            <p style="color: var(--muted)">
+              Progressive Web App that works even without internet connection.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <h2 id="planets" class="section-title">Explore the Planets</h2>
       <div class="planet-grid" role="list">
         <!-- 1 HTML Basics -->
         <a
