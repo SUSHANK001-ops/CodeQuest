@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Forms – CodeQuest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/planets.css" />
+    <link rel="manifest" href="../manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/rocket.svg" />
+  </head>
+  <body>
+    <header class="site-header container" role="banner">
+      <a class="logo" href="../index.html">
+        <img
+          src="../assets/icons/rocket.svg"
+          alt="CodeQuest rocket logo"
+          width="24"
+          height="24"
+        />
+        <span>CodeQuest</span>
+      </a>
+      <nav class="site-nav" aria-label="Planet">
+        <ul>
+          <li><a href="../index.html#planets">Back to Galaxy</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container split" id="main" tabindex="-1">
+      <section aria-labelledby="lesson-title">
+        <h1 id="lesson-title">HTML Forms</h1>
+        <p>
+          Build accessible forms with labels, inputs, and client-side
+          validation.
+        </p>
+      </section>
+
+      <section class="editor-wrap" aria-label="Editor">
+        <div class="editor-toolbar">
+          <button id="runBtn" class="btn btn-primary">Run</button>
+          <button id="resetBtn" class="btn">Reset</button>
+          <button id="fullBtn" class="btn">Fullscreen</button>
+        </div>
+        <div
+          id="editor"
+          class="editor-area"
+          role="region"
+          aria-label="Code editor"
+        ></div>
+        <div class="preview" aria-label="Live preview">
+          <iframe id="preview" title="Live preview"></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a class="logo" href="../index.html" aria-label="CodeQuest home">
+            <img
+              src="../assets/icons/rocket.svg"
+              alt="CodeQuest rocket logo"
+              width="20"
+              height="20"
+              onerror="this.onerror=null;this.src='https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f680.svg'"
+            />
+            <span>CodeQuest</span>
+          </a>
+          <p class="tiny">
+            A tiny galaxy to learn HTML, CSS, and JavaScript with hands-on
+            planets.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Planets</h3>
+          <ul class="footer-links">
+            <li><a href="./html-basics.html">HTML Basics</a></li>
+            <li><a href="./html-forms.html">HTML Forms</a></li>
+            <li><a href="./css-selectors.html">CSS Selectors</a></li>
+            <li><a href="./css-flexgrid.html">CSS Flex & Grid</a></li>
+            <li><a href="./js-variables.html">JS Variables</a></li>
+            <li><a href="./js-dom.html">JS DOM</a></li>
+            <li><a href="./js-events.html">JS Events</a></li>
+            <li><a href="./mission-control.html">Mission Control</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html#planets">All Planets</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <a href="#" class="back-to-top">Back to top</a>
+        <p class="tiny">© 2025 CodeQuest • Offline-ready learning</p>
+      </div>
+    </footer>
+
+    <script type="module" src="../js/galaxy.js"></script>
+    <script type="module" src="../js/planetEngine.js"></script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10b981" />
+    <title>About – CodeQuest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/rocket.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header container" role="banner">
+      <a class="logo" href="./index.html" aria-label="CodeQuest home">
+        <img
+          src="./assets/icons/rocket.svg"
+          alt="CodeQuest rocket logo"
+          width="28"
+          height="28"
+          onerror="this.onerror=null;this.src='https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f680.svg'"
+        />
+        <span>CodeQuest</span>
+      </a>
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#planets">Planets</a></li>
+          <li><a class="active" href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="container" tabindex="-1">
+      <h1>Our Mission</h1>
+      <p>
+        CodeQuest is a micro-galaxy for learning the building blocks of the web:
+        HTML, CSS, and JavaScript. We believe learning should be playful,
+        accessible, and offline-ready.
+      </p>
+
+      <section aria-labelledby="team">
+        <h2 id="team">The Crew</h2>
+        <ul class="team-grid" role="list">
+          <li role="listitem" class="team-card">
+            <img
+              loading="lazy"
+              src="https://source.unsplash.com/featured/?headshot,portrait&sig=11"
+              alt="Team member headshot"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=400&q=60'"
+            />
+            <div>
+              <h3>Captain Nova</h3>
+              <p>Design systems and UX.</p>
+            </div>
+          </li>
+          <li role="listitem" class="team-card">
+            <img
+              loading="lazy"
+              src="https://source.unsplash.com/featured/?headshot,portrait&sig=12"
+              alt="Team member headshot"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=400&q=60'"
+            />
+            <div>
+              <h3>Engineer Orion</h3>
+              <p>Editor engine and service worker.</p>
+            </div>
+          </li>
+          <li role="listitem" class="team-card">
+            <img
+              loading="lazy"
+              src="https://source.unsplash.com/featured/?headshot,portrait&sig=13"
+              alt="Team member headshot"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=60'"
+            />
+            <div>
+              <h3>Navigator Lyra</h3>
+              <p>Curriculum and accessibility.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="timeline" class="timeline">
+        <h2 id="timeline">Flight Timeline</h2>
+        <svg viewBox="0 0 800 120" role="img" aria-label="Development timeline">
+          <desc>Milestones from concept to launch</desc>
+          <line
+            x1="50"
+            y1="60"
+            x2="750"
+            y2="60"
+            stroke="var(--aurora-cyan)"
+            stroke-width="4"
+          />
+          <circle cx="150" cy="60" r="8" fill="var(--cosmic-gold)" />
+          <text x="150" y="95" text-anchor="middle">Concept</text>
+          <circle cx="350" cy="60" r="8" fill="var(--cosmic-gold)" />
+          <text x="350" y="95" text-anchor="middle">Prototype</text>
+          <circle cx="550" cy="60" r="8" fill="var(--cosmic-gold)" />
+          <text x="550" y="95" text-anchor="middle">Beta</text>
+          <circle cx="750" cy="60" r="8" fill="var(--cosmic-gold)" />
+          <text x="750" y="95" text-anchor="middle">Launch</text>
+        </svg>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a class="logo" href="./index.html" aria-label="CodeQuest home">
+            <img
+              src="./assets/icons/rocket.svg"
+              alt="CodeQuest rocket logo"
+              width="20"
+              height="20"
+              onerror="this.onerror=null;this.src='https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f680.svg'"
+            />
+            <span>CodeQuest</span>
+          </a>
+          <p class="tiny">
+            A tiny galaxy to learn HTML, CSS, and JavaScript with hands-on
+            planets.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Planets</h3>
+          <ul class="footer-links">
+            <li><a href="./planets/html-basics.html">HTML Basics</a></li>
+            <li><a href="./planets/html-forms.html">HTML Forms</a></li>
+            <li><a href="./planets/css-selectors.html">CSS Selectors</a></li>
+            <li><a href="./planets/css-flexgrid.html">CSS Flex & Grid</a></li>
+            <li><a href="./planets/js-variables.html">JS Variables</a></li>
+            <li><a href="./planets/js-dom.html">JS DOM</a></li>
+            <li><a href="./planets/js-events.html">JS Events</a></li>
+            <li>
+              <a href="./planets/mission-control.html">Mission Control</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="./index.html#planets">All Planets</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <a href="#" class="back-to-top">Back to top</a>
+        <p class="tiny">© 2025 CodeQuest • Offline-ready learning</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/galaxy.js"></script>
+  </body>
+</html>

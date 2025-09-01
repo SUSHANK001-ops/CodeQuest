@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10b981" />
+    <title>CodeQuest – Learn HTML, CSS, and JavaScript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/rocket.svg" />
+    <meta
+      name="description"
+      content="A space-themed learning galaxy to master HTML, CSS, and JavaScript with interactive planets."
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header container" role="banner">
+      <a class="logo" href="./index.html" aria-label="CodeQuest home">
+        <img
+          src="./assets/icons/rocket.svg"
+          alt="CodeQuest rocket logo"
+          width="28"
+          height="28"
+          onerror="this.onerror=null;this.src='https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f680.svg'"
+        />
+        <span>CodeQuest</span>
+      </a>
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a class="active" href="./index.html">Home</a></li>
+          <li><a href="#planets">Planets</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero" role="region" aria-label="Galaxy hero">
+      <div
+        class="hero-bg"
+        style="
+          --bg: url('https://source.unsplash.com/featured/?galaxy,stars'),
+            url('https://images.unsplash.com/photo-1446776653964-20c1d3a081b0?auto=format&fit=crop&w=1600&q=60');
+        "
+      ></div>
+      <div class="hero-inner container">
+        <h1>Launch your coding journey</h1>
+        <p>
+          Explore 8 interactive planets to learn HTML, CSS, and JavaScript—right
+          in your browser.
+        </p>
+        <button
+          id="launchBtn"
+          class="btn btn-primary"
+          data-scroll="#planets"
+          aria-describedby="launchHint"
+        >
+          Launch Galaxy
+        </button>
+        <p id="launchHint" class="sr-only">
+          Press the button to jump to the planet grid
+        </p>
+        <audio id="ambient" aria-label="Ambient space sound" loop muted>
+          <!-- Optional ambient audio (royalty-free). Muted by default to respect user choice. -->
+          <source
+            src="https://upload.wikimedia.org/wikipedia/commons/4/45/White-noise.ogg"
+            type="audio/ogg"
+          />
+        </audio>
+      </div>
+    </section>
+
+    <main id="main" class="container" tabindex="-1">
+      <h2 id="planets" class="section-title">Planets</h2>
+      <div class="planet-grid" role="list">
+        <!-- 1 HTML Basics -->
+        <a
+          role="listitem"
+          class="planet-card"
+          href="./planets/html-basics.html"
+          aria-label="HTML Basics planet"
+        >
+          <img
+            loading="lazy"
+            src="https://source.unsplash.com/featured/?mercury,space&sig=1"
+            alt="Planet Mercury in space"
+            data-fallback="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=800&q=60|https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=60"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=800&q=60'"
+          />
+          <div class="card-meta">
+            <h3>HTML Basics</h3>
+            <div
+              class="ring"
+              data-progress="0"
+              aria-label="Progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+        </a>
+        <!-- 2 HTML Forms -->
+        <a
+          role="listitem"
+          class="planet-card"
+          href="./planets/html-forms.html"
+          aria-label="HTML Forms planet"
+        >
+          <img
+            loading="lazy"
+            src="https://source.unsplash.com/featured/?venus,space&sig=2"
+            alt="Planet Venus in space"
+            data-fallback="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=60|https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=60"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=60'"
+          />
+          <div class="card-meta">
+            <h3>HTML Forms</h3>
+            <div
+              class="ring"
+              data-progress="0"
+              aria-label="Progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+        </a>
+        <!-- 3 CSS Selectors -->
+        <a
+          role="listitem"
+          class="planet-card"
+          href="./planets/css-selectors.html"
+          aria-label="CSS Selectors planet"
+        >
+          <img
+            loading="lazy"
+            src="https://source.unsplash.com/featured/?earth,space&sig=3"
+            alt="Planet Earth in space"
+            data-fallback="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=60|https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=60"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=60'"
+          />
+          <div class="card-meta">
+            <h3>CSS Selectors</h3>
+            <div
+              class="ring"
+              data-progress="0"
+              aria-label="Progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+        </a>
+        <!-- 4 CSS Flex & Grid -->
+        <a
+          role="listitem"
+          class="planet-card"
+          href="./planets/css-flexgrid.html"
+          aria-label="CSS Flex and Grid planet"
+        >
+          <img
+            loading="lazy"
+            src="https://source.unsplash.com/featured/?mars,space&sig=4"
+            alt="Planet Mars in space"
+            data-fallback="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=60|https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=60"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=60'"
+          />
+          <div class="card-meta">
+            <h3>CSS Flex & Grid</h3>
+            <div
+              class="ring"
+              data-progress="0"
+              aria-label="Progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+        </a>
+        <!-- 5 JS Variables -->
+        <a
+          role="listitem"
+          class="planet-card"
+          href="./planets/js-variables.html"
+          aria-label="JavaScript Variables planet"
+        >
+          <img
+            loading="lazy"
+            src="https://source.unsplash.com/featured/?jupiter,space&sig=5"
+            alt="Planet Jupiter in space"
+            data-fallback="https://images.unsplash.com/photo-1447433819943-74a20887a81e?auto=format&fit=crop&w=800&q=60|https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=60"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1447433819943-74a20887a81e?auto=format&fit=crop&w=800&q=60'"
+          />
+          <div class="card-meta">
+            <h3>JS Variables</h3>
+            <div
+              class="ring"
+              data-progress="0"
+              aria-label="Progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+        </a>
+        <!-- 6 JS DOM -->
+        <a
+          role="listitem"
+          class="planet-card"
+          href="./planets/js-dom.html"
+          aria-label="JavaScript DOM planet"
+        >
+          <img
+            loading="lazy"
+            src="https://source.unsplash.com/featured/?saturn,space&sig=6"
+            alt="Planet Saturn in space"
+            data-fallback="https://images.unsplash.com/photo-1469228252629-cbe7cb7db2d6?auto=format&fit=crop&w=800&q=60|https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=60"
+          />
+          <div class="card-meta">
+            <h3>JS DOM</h3>
+            <div
+              class="ring"
+              data-progress="0"
+              aria-label="Progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+        </a>
+        <!-- 7 JS Events -->
+        <a
+          role="listitem"
+          class="planet-card"
+          href="./planets/js-events.html"
+          aria-label="JavaScript Events planet"
+        >
+          <img
+            loading="lazy"
+            src="https://source.unsplash.com/featured/?uranus,space&sig=7"
+            alt="Planet Uranus in space"
+            data-fallback="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=60|https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=60"
+          />
+          <div class="card-meta">
+            <h3>JS Events</h3>
+            <div
+              class="ring"
+              data-progress="0"
+              aria-label="Progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+        </a>
+        <!-- 8 Mission Control -->
+        <a
+          role="listitem"
+          class="planet-card"
+          href="./planets/mission-control.html"
+          aria-label="Mission Control planet"
+        >
+          <img
+            loading="lazy"
+            src="https://source.unsplash.com/featured/?neptune,space&sig=8"
+            alt="Planet Neptune in space"
+            data-fallback="https://images.unsplash.com/photo-1473929732031-deeec5f0f8de?auto=format&fit=crop&w=800&q=60|https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=60"
+          />
+          <div class="card-meta">
+            <h3>Mission Control</h3>
+            <div
+              class="ring"
+              data-progress="0"
+              aria-label="Progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+        </a>
+      </div>
+    </main>
+
+    <footer class="site-footer container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a class="logo" href="./index.html" aria-label="CodeQuest home">
+            <img
+              src="./assets/icons/rocket.svg"
+              alt="CodeQuest rocket logo"
+              width="20"
+              height="20"
+              onerror="this.onerror=null;this.src='https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f680.svg'"
+            />
+            <span>CodeQuest</span>
+          </a>
+          <p class="tiny">
+            A tiny galaxy to learn HTML, CSS, and JavaScript with hands-on
+            planets.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Planets</h3>
+          <ul class="footer-links">
+            <li><a href="./planets/html-basics.html">HTML Basics</a></li>
+            <li><a href="./planets/html-forms.html">HTML Forms</a></li>
+            <li><a href="./planets/css-selectors.html">CSS Selectors</a></li>
+            <li><a href="./planets/css-flexgrid.html">CSS Flex & Grid</a></li>
+            <li><a href="./planets/js-variables.html">JS Variables</a></li>
+            <li><a href="./planets/js-dom.html">JS DOM</a></li>
+            <li><a href="./planets/js-events.html">JS Events</a></li>
+            <li>
+              <a href="./planets/mission-control.html">Mission Control</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="./index.html#planets">All Planets</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <a href="#" class="back-to-top">Back to top</a>
+        <p class="tiny">© 2025 CodeQuest • Offline-ready learning</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/galaxy.js"></script>
+  </body>
+</html>

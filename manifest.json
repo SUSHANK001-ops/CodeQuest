@@ -1,0 +1,17 @@
+{
+  "name": "CodeQuest",
+  "short_name": "CodeQuest",
+  "start_url": "/codequest/index.html",
+  "scope": "/codequest/",
+  "display": "standalone",
+  "background_color": "#0b0e14",
+  "theme_color": "#0b0e14",
+  "icons": [
+    {
+      "src": "./assets/icons/rocket.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 – Lost in Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/404.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/rocket.svg" />
+  </head>
+  <body class="lost-bg">
+    <main class="lost-wrap" aria-labelledby="lostTitle">
+      <h1 id="lostTitle">Lost in Space</h1>
+      <p>The page you’re seeking drifted into a black hole.</p>
+      <a class="btn btn-primary" href="./index.html">Beam me back home</a>
+    </main>
+    <script type="module">
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./js/sw.js").catch(() => {});
+      }
+    </script>
+  </body>
+</html>
