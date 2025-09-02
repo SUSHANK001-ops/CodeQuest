@@ -56,6 +56,7 @@ class JSVariablesPlanet {
                 <button id="submit-btn" class="btn btn-primary">🚀 Run Code</button>
                 <button id="hint-btn" class="btn btn-secondary">💡 Get Hint</button>
                 <button id="reset-btn" class="btn">Reset</button>
+                <button id="next-btn" class="btn btn-success" style="display: none;">➡️ Next Exercise</button>
               </div>
             </div>
 
@@ -94,6 +95,11 @@ class JSVariablesPlanet {
     document
       .getElementById("clear-console")
       .addEventListener("click", () => this.clearConsole());
+
+    // Next button
+    document
+      .getElementById("next-btn")
+      .addEventListener("click", () => this.nextExercise());
 
     // Step indicators
     document.querySelectorAll(".step").forEach((step) => {
